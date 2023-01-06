@@ -1,0 +1,64 @@
+{% extends 'base.html' %} {% block body %}
+    <style>
+        input.larger {
+            transform: scale(2);
+            margin-left: 60px;
+        }
+    </style>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6" id="mid-column">
+                <form action="{{ url_for('foo') }}" method="POST">
+                    The Cloudwatch rule {{ rule_name }} state is currently<br>
+                    <span style="font-size:1.5em;font-weight:300;">{{ state }}</span><br>
+                    Click the button below to toggle the state
+                    <div>
+                        <button name="CloudwatchState" type="submit" id="submit_button" class="btn btn-primary" value="{{ state }}">
+                            {% if state == "ENABLED" %}
+                                Click to disable {{ rule_name }}
+                            {% else %}
+                                Click to enable {{ rule_name }}
+                            {% endif %}
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="notif" class="modal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Cloudwatch Switch</h5>
+                </div>
+                <div class="modal-body">
+                    {% with messages = get_flashed_messages() %}
+                        {% if messages %}
+                            {% for message in messages %}
+                                <p>{{ message }}</p>
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        /* Trigger flash modal */
+        $(document).ready(function() {
+            var messages = "{{ get_flashed_messages() }}";
+            if (typeof messages != 'undefined' && messages != '[]') {
+              $("#notif").modal("show");
+            };
+        });
+    </script>
+
+{% endblock %}

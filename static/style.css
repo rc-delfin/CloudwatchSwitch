@@ -1,0 +1,144 @@
+    * {
+      font-family: 'Open Sans', 'Roboto', sans-serif;
+      font-size: 1em;
+    }
+    .container {
+        padding-bottom: 40px;
+        margin-top:40px;
+    }
+    .alert {
+      border:1px solid #cccccc;
+      position:fixed;
+      left: 50%;
+      transform: translate(-50%, 100%);
+      box-shadow: 0 0 8px #888888;
+      padding: 0;
+      min-width:280px;
+    }
+
+
+    @media only screen and (min-width: 451px) {
+        #submit_button {
+            ffloat:right;
+            margin-top:40px;
+        }
+    }
+    .btn {
+        margin: 8px;
+        padding:16px 25px 16px 25px;
+        font-size:1.2em;
+        background-color:#4285F4;
+        color:#ffffff;
+    }
+    #submit_button {
+        margin-top:30px;
+    }
+    #mid-column {
+        text-align: center;
+        border:1px solid #cccccc;
+        background-color: #eeeeee;
+        padding:40px 20px;
+        max-width:100%;
+    }
+    ::-webkit-scrollbar {
+        width: 25px;
+    }
+    ::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 6px rgba(200,200,200,1);
+    }
+    ::-webkit-scrollbar-thumb {
+        background-color:#fff;
+        -webkit-box-shadow: inset 0 0 6px rgba(90,90,90,0.7);
+    }
+
+/* select */
+/* The container must be positioned relative: */
+.custom-select {
+  position: relative;
+  font-family: Arial;
+  text-align: left;
+}
+
+.custom-select select {
+  display: none; /*hide original SELECT element: */
+}
+
+.select-selected {
+  background-color: DodgerBlue;
+}
+
+/* Style the arrow inside the select element: */
+.select-selected:after {
+  position: absolute;
+  content: "";
+  top: 14px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-color: #fff transparent transparent transparent;
+}
+
+/* Point the arrow upwards when the select box is open (active): */
+.select-selected.select-arrow-active:after {
+  border-color: transparent transparent #fff transparent;
+  top: 7px;
+}
+
+/* style the items (options), including the selected item: */
+/* .select-items div,.select-selected { */
+.select-items div {
+    color: #666666;
+  padding: 8px 16px;
+  border-left: 1px solid #cccccc;
+  border-right: 1px solid #cccccc;
+  border-bottom: 1px solid #cccccc;
+  /* border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent; */
+  cursor: pointer;
+}
+.select-selected {
+  color: #ffffff;
+  padding: 8px 16px;
+  border: 1px solid transparent;
+  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+  cursor: pointer;
+}
+
+/* Style items (options): */
+.select-items {
+  position: absolute;
+  background-color: #fefefe;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
+
+/* Hide the items when the select box is closed: */
+.select-hide {
+  display: none;
+}
+
+.select-items div:hover, .same-as-selected {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* color runner */
+#color_runner {
+	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 5s ease infinite;
+	height: 5px;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
