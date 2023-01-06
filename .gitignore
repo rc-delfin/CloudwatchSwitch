@@ -1,0 +1,12 @@
+scratch.txt
+/venv
+/'applications OAuth json'
+*creds.*
+.env
+*_secret*
+zappa_settings.json
+.idea
+scratch*
+jumpoff*
+stub*.*
+.vscode
